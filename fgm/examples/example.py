@@ -10,12 +10,12 @@ app = Flask(__name__, template_folder="templates")
 
 
 # you can set key as config
-app.config['GOOGLEMAPS_KEY'] = "AIzaSyD_S4rSw5WZ7zPZuCgTmuu3yQe791Llhic"
+app.config['GOOGLEMAPS_KEY'] = "!!!"
 
 # you can also pass key here
 GoogleMaps(
     app,
-     #key="AIzaSyD_S4rSw5WZ7zPZuCgTmuu3yQe791Llhic"
+     #key="!!!"
 )
 
 # NOTE: this example is using a form to get the apikey
