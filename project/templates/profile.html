@@ -1,0 +1,37 @@
+<!-- templates/profile.html -->
+
+<style>
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+</style>
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Welcome, {{ name }}!
+</h1>
+<h2 class="title">
+  Your Plots:
+</h2>
+
+<table class = "center">
+  <tr>
+    <th>Street Address</th>
+  </tr>
+  {% for plot in range(user_plots.count()) %}
+  <tr>
+    <td>{{user_plots[plot].street_addr}}</td>
+    <td>
+    <a href="{{ url_for('main.merch_delete',mid=user_plots[plot].id) }}"
+  onclick="return confirm('Do you want to permanently delete plot location {{ user_plots[plot].street_addr }}?');" title="Delete Plot">
+  <!--i class="material-icons" style="font-size:16px">delete</i></a-->
+  <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}
