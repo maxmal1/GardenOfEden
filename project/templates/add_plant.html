@@ -53,11 +53,13 @@
 </div>
 <table class = "center">
   <tr>
-    <th>Street Address</th>
+    <th>Plant</th>
+    <th>Date Planted</th>
   </tr>
   {% for plant in range(plot.count()) %}
   <tr>
     <td>{{plot[plant].plant}}</td>
+    <td>{{plot[plant].date}}</td>
     {% if user_id == plot[plant].user_id%}
     <td>
       <a href="{{ url_for('auth.plant_delete',mid=plot[plant].id) }}"
